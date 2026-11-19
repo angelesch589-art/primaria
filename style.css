@@ -1,0 +1,295 @@
+/* Estilos ultra dinámicos, decorados y con movimiento (Morado y Rojo) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f3e8ff 0%, #ffe4e6 50%, #f5f3ff 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 12s ease infinite;
+  color: #1f2937;
+  padding: 25px;
+  min-height: 100vh;
+}
+
+/* Animación de movimiento continuo en el fondo */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* Cabecera con degradado animado y sombra brillante */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 25px;
+  background: linear-gradient(135deg, #7c3aed, #9333ea, #dc2626);
+  background-size: 200% 200%;
+  animation: gradientMove 6s ease infinite, fadeInDown 0.6s ease;
+  color: white;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+header h1 {
+  font-size: 2.3rem;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+header p {
+  color: #f3e8ff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Tarjetas con efecto de levitación y bordes brillantes */
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
+  border: 2px solid #ede9fe;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Línea superior decorativa animada con brillo */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, transparent, #9333ea, #ef4444, transparent);
+  animation: shimmer 4s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.28);
+  border-color: #d8b4fe;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #6b21a8;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #581c87;
+  transition: color 0.3s;
+}
+
+.form-group:hover label {
+  color: #9333ea;
+}
+
+input, select {
+  padding: 12px;
+  border: 2px solid #e9d5ff;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background-color: #faf5ff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animación y destello dinámico en inputs */
+input:focus, select:focus {
+  outline: none;
+  border-color: #9333ea;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 6px rgba(147, 51, 234, 0.2);
+  transform: translateY(-2px);
+}
+
+.form-actions {
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+}
+
+button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Botón Principal con animación de pulso sutil */
+.btn-primary {
+  background: linear-gradient(135deg, #9333ea, #7c3aed);
+  color: white;
+  box-shadow: 0 6px 20px rgba(147, 51, 234, 0.45);
+  animation: pulseButton 3s infinite;
+}
+
+@keyframes pulseButton {
+  0% { box-shadow: 0 6px 20px rgba(147, 51, 234, 0.45); }
+  50% { box-shadow: 0 6px 25px rgba(147, 51, 234, 0.7), 0 0 0 4px rgba(147, 51, 234, 0.2); }
+  100% { box-shadow: 0 6px 20px rgba(147, 51, 234, 0.45); }
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+  color: white;
+  box-shadow: 0 4px 15px rgba(107, 114, 128, 0.3);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #4b5563, #374151);
+}
+
+/* Botón Editar con movimiento dinámico rojo */
+.btn-edit {
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  color: white;
+  padding: 9px 16px;
+  margin-right: 6px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+}
+
+.btn-edit:hover {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  transform: translateY(-3px) scale(1.08) rotate(-1deg);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.55);
+}
+
+/* Botón Eliminar con animación de zoom rojo oscuro */
+.btn-delete {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: white;
+  padding: 9px 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.35);
+}
+
+.btn-delete:hover {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  transform: translateY(-3px) scale(1.08) rotate(1deg);
+  box-shadow: 0 6px 18px rgba(185, 28, 28, 0.55);
+}
+
+.oculto {
+  display: none;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th, td {
+  padding: 15px 18px;
+  text-align: left;
+}
+
+th {
+  background: linear-gradient(135deg, #f3e8ff, #ede9fe);
+  color: #6b21a8;
+  font-weight: 800;
+  border-bottom: 3px solid #d8b4fe;
+  letter-spacing: 0.3px;
+}
+
+td {
+  border-bottom: 1px solid #f3e8ff;
+  color: #374151;
+}
+
+/* Filas de tabla con movimiento fluido al pasar el cursor */
+tbody tr {
+  transition: all 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: #faf5ff;
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.12);
+  z-index: 10;
+  position: relative;
+}
+
+/* Animación de entrada */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
